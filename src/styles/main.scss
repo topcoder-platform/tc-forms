@@ -1,0 +1,10 @@
+@import '~tc-ui/src/styles/tc-styles';
+// This is the partial where we load all the Roboto fonts for Webpack
+@import 'fonts';
+
+body {
+  @include roboto;
+  box-sizing: border-box;
+  // Prevenet jumping of elements, force scrollbar always-on
+  overflow-y: scroll;
+}

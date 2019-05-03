@@ -1,0 +1,79 @@
+@import '~tc-ui/src/styles/tc-includes';
+
+:global {
+	$reactselectheight : 40px;
+	$reactselectcontentheight: 20px;
+	@mixin reactselectstyles {
+
+		& .react-select__control:hover {
+			border-color: $tc-gray-50;
+		}
+
+		& .react-select__control--is-focused {
+			border-color: #0681ff !important;
+			box-shadow: 0 0 2px 0 rgba(6, 129, 255, 0.7) !important;
+		}
+
+		& .react-select__control {
+			height: $reactselectheight;
+			border-color: $tc-gray-30;
+			box-shadow: none;//0 0 2px 0 rgba(6, 129, 255, 0.7) !important;
+
+			& > div {
+				height: $reactselectheight - 2px;
+			}
+
+			& > div:nth-child(1) > div:nth-last-child(1) {
+				height: $reactselectcontentheight + 4px;
+			}
+
+			& input {
+				height: $reactselectcontentheight;
+				line-height: $reactselectcontentheight;
+				transition: none !important;
+				box-shadow: none !important;
+				border-radius: 0;
+			}
+
+		}
+
+		& .react-select__value-container {
+			& > div:nth-last-child(1) {
+				height: $reactselectcontentheight + 4px;
+			}
+		}
+
+		& .react-select__option {
+			@include roboto-medium;
+			font-size: 13px;
+		}
+
+		& .react-select__multi-value {
+			background-color: $tc-gray-20 !important;
+			font-weight: bold;
+		}
+
+		& .react-select__menu-notice--no-options {
+			text-align : left !important;
+			font-size : 15px;
+			color: $tc-gray-50;
+		}
+	}
+	.react-select-hiddendropdown-container {
+		@include reactselectstyles;
+		/*hide dropdown indicator*/
+		& .react-select__control {
+			& > div:nth-child(2) {
+				display: none;
+			}
+			& .react-select__dropdown-indicator {
+				display: none;
+			}
+		}
+	}
+
+	.react-select-container {
+		@include reactselectstyles;
+	}
+
+}

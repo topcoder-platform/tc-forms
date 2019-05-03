@@ -1,0 +1,126 @@
+@mixin flexBox {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+}
+
+// Stop the page from shrinking, modify the variable;
+$minimumPageWidth: 984px;
+
+@import '~tc-ui/src/styles/tc-includes';
+
+:global {
+  .wizardWrapper {
+    min-height: 100vh;
+    height: 100%;
+    background-color: $tc-gray-0;
+
+    @media screen and (max-width: $screen-md - 1px) {
+      margin-top: 0;
+    }
+  }
+
+  .ReactModalPortal .wizardWrapper {
+    margin-top: 0;
+  }
+
+  .wizardHeader {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 0;
+    height: 43px;
+
+    @media screen and (max-width: $screen-md - 1px) {
+      display: none;
+    }
+
+    button {
+      align-self: flex-start;
+      white-space: nowrap;
+
+      .Icon {
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .wizardHeadline {
+    @include tc-heading-small;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 50px;
+    @include roboto-light;
+    font-size: 36px;
+    color: $tc-black;
+    line-height: 40px;
+  }
+
+  .ReactModalPortal .header > h1:first-child {
+    margin-top: 40px;
+  }
+
+  .wizardCardContainer {
+    @include tc-body;
+    color: $tc-gray-50;
+    text-align: center;
+    max-width: 1000px;
+    position: relative;
+    min-height: calc(100vh - 130px);
+    margin: 0 auto;
+    padding-bottom: 90px;
+
+    a,
+    a:visited,
+    a:hover,
+    a:active {
+      color: $tc-dark-blue;
+      cursor: pointer;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .cards {
+      // margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+
+      @media screen and (max-width: $screen-md - 1px) {
+        margin-left: -5px;
+        margin-right: -5px;
+      }
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-bottom: 15px;
+
+      @media screen and (max-width: $screen-md - 1px) {
+        margin-bottom: 2 * $base-unit;
+        padding: 0 6 * $base-unit;
+      }
+
+      > a {
+        @media screen and (max-width: $screen-md - 1px) {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  sup {
+    font-size: 0.5em;
+    vertical-align: text-top;
+  }
+
+  sub {
+    font-size: 0.5em;
+    vertical-align: text-bottom;
+  }
+}

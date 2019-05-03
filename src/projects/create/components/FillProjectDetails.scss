@@ -1,0 +1,214 @@
+// Project form styles
+
+@import 'layout';
+@import '~tc-ui/src/styles/tc-includes';
+@import '~styles/_variables.scss';
+
+@mixin flexBox {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+}
+
+:global {
+  .FillProjectDetailsWrapper {
+    // @extend .wizardWrapper;
+
+    &.form-theme-light {
+      .FillProjectDetails {
+        .two-col-content.content .container .left-area .left-area-content {
+          .sub-title .title {
+            color: $tc-gray-100;
+            font-weight: 400;
+            font-size: $tc-heading-sm;
+          }
+        }
+      }
+    }
+  }
+
+  .FillProjectDetails {
+    .text-header-wrapper {
+      padding: 0 80px;
+
+      @media screen and (max-width: $screen-md - 1px) {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+    }
+
+    h1 {
+      margin-top: 30px;
+      @extend .wizardHeadline;
+
+      @media screen and (max-width: $screen-md - 1px) {
+        margin-top: 0;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 0;
+        padding: 4 * $base-unit;
+        text-align: left;
+      }
+    }
+
+    .two-col-content {
+      padding: 0 !important;
+
+      .container {
+        @include flexBox;
+        background-color: transparent;
+        display: flex;
+        max-width: 760px;
+        margin: 20px auto;
+
+        .left-area {
+          flex: auto;
+        }
+
+        .right-area {
+          flex: auto;
+          border-radius: 4px;
+          position: relative;
+        }
+      }
+
+      &.content{
+        .container {
+          @include flexBox;
+          align-self: flex-start;
+          background-color: none;
+          display: flex;
+          padding: 0;
+          margin: 0 auto;
+
+          /* .left-area */
+          .left-area {
+            flex: auto;
+            width: 100%;
+            position: relative;
+
+            .left-area-content {
+              background: $tc-white;
+              padding: 50px 80px;
+
+              :global(.form-theme-light) & {
+                padding-top: 30px;
+
+                @media screen and (max-width: $screen-md - 1px) {
+                  padding: 0 4 * $base-unit 3 * $base-unit;
+                }
+              }
+
+              @media screen and (max-width: $screen-md - 1px) {
+                background-color: $tc-white;
+                border-radius: 0;
+                box-shadow: none;
+                padding: 3 * $base-unit 4 * $base-unit;
+              }
+
+              .title {
+                color: $tc-gray-80;
+                @include roboto-bold;
+              }
+
+              .section-footer {
+                margin-top: $base_unit * 4;
+                margin-bottom: 0;
+                background: none;
+                height: 40px;
+
+                :global(.form-theme-light) & {
+                  margin-top: 10 * $base-unit;
+                }
+
+                @media screen and (max-width: $screen-md - 1px) {
+                  margin-bottom: 10 * $base-unit;
+                  margin-top: 10 * $base-unit;
+                }
+              }
+            }
+
+            .left-area-footer {
+              @include tc-label-sm;
+              color: $tc-gray-50;
+              margin-top: 4 * $base_unit;
+
+              span {
+                clear: both;
+                float: none;
+              }
+            }
+          }
+
+          .right-area {
+            flex: auto !important;
+            width: 320px;
+            min-width: 320px;
+            max-width: 320px;
+            margin-left: 4 * $base_unit;
+
+            @media screen and (max-width: $screen-rg - 1px) {
+              display: none;
+            }
+
+            .right-area-footer {
+              @include roboto;
+              padding: 10px 0 0 0;
+              font-size: 13px;
+              line-height: 20px;
+              color: $tc-gray-50;
+              font-style: italic;
+
+              span {
+                float: right;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sub-title {
+      margin: 30px 0 10px;
+      .title {
+        font-size: 15px;
+        line-height: 25px;
+        color: $tc-gray-80;
+
+        span {
+          color: $tc-orange;
+          font-size: 15px;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+
+  .ProjectWizard {
+    .FillProjectDetails {
+      .section-header .section-number {
+        display: none;
+      }
+
+      .gray-text {
+        @include roboto;
+        font-size: 15px;
+        color: $tc-gray-50;
+        line-height: 25px;
+      }
+    }
+  }
+
+  .ProjectWizard-step-3 {
+    @media screen and (max-width: $screen-md - 1px) {
+      .content {
+        padding: 0;
+
+        > .escape-button,
+        > .back-button {
+          display: none;
+        }
+      }
+    }
+  }
+}

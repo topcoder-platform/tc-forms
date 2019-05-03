@@ -1,0 +1,22 @@
+@import '../../node_modules/tc-ui/src/styles/tc-includes';
+@import '../../node_modules/appirio-tech-react-components/components/Wizard/screen-size';
+
+:global {
+  .WizardCreateProject {
+    align-content: flex-start;
+
+    @include mobile-tablet {
+      margin-top: 0;
+    }
+  }
+  .WizardMiddle {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+.create-container {
+  height: 100%;
+  width: 100%;
+}
