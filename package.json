@@ -80,7 +80,7 @@
   },
   "dependencies": {
     "appirio-tech-react-components": "git+https://github.com/appirio-tech/react-components.git#feature/connectv2",
-    "axios": "^0.13.1",
+    "axios": "^0.16.1",
     "classnames": "^2.2.3",
     "draft-js": "^0.10.1",
     "draft-js-utils": "^0.1.7",
